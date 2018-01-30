@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ΣΤΑΤ2018 - Υποβολή Περιλήψεων</title>
+
+    <!-- CSS & CUSTOM FONTS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/infinite-slider.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+    <!-- MOBILE TOP-NAV -->
+    <div class="mobile-nav">
+        <a id="mobile-logo" href="index.html"></a>
+        <div class="mobile-menu-container">
+            <span class="mobile-menu-icon"></span>
+        </div>
+    </div>
+    <!-- END OF MOBILE TOP-NAV -->
+
+    <!-- DESKTOP TOP-NAV -->
+    <nav class="top-nav">
+        <ul>
+            <a id="logo" href="index.html"></a>
+            <li><a href="index.html">Αρχική Σελίδα</a></li>
+            <li class="dropdown-btn">
+                <a href="#">Πληροφορίες<span class="caret"></span></a>
+                <ul class="dropdown">
+                    <li><a href="registration.html">Εγγραφή Συμμετεχόντων</a></li>
+                    <li><a href="papers.html">Πρόσκληση Υποβολής Εργασιών</a></li>
+                    <li><a href="dates.html">Σημαντικές Ημερομηνίες</a></li>
+                    <li><a href="program.html">Πρόγραμμα</a></li>
+                    <li><a href="committee.html">Οργανωτική επιτροπή</a></li>
+                    <li><a href="venue.html">Χώρος Διεξαγωγής</a></li>
+                </ul>
+            </li>
+            <li class="active-link"><a href="sendAbstract.html">Υποβολή Περιλήψεων</a></li>
+            <li><a href="sponsors.html">Χορηγοί</a></li>
+        </ul>
+    </nav>
+    <!-- END OF DESKTOP TOP-NAV -->
+    <div class="pagination">
+        <div class="pagination-container">
+            <div class="holder"><i class="fa fa-upload" aria-hidden="true"></i>Υποβολή Περιλήψεων</div>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div id="form-cont" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">ΥΠΟΒΟΛΗ ΠΕΡΙΛΗΨΕΩΝ</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form id="sendAbstarctForm" method="post" class="form-horizontal" action="html/sendAbstract_check.html">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="senderName">Όνομα Αποστολέα:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="senderName" name="senderName" placeholder="Όνομα Αποστολέα" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="senderOrganization">Οργανισμός:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="senderOrganization" name="senderOrganization" placeholder="Οργανισμός" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="senderEmail">Email Αποστολέα:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="senderEmail" name="senderEmail" placeholder="Email Αποστολέα" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="senderPaperTitle">Τίτλος Εργασίας:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="senderPaperTitle" name="senderPaperTitle" placeholder="Τίτλος Εργασίας" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="senderAbstract">Περίληψη:</label>
+                                    <div class="col-sm-7">
+                                        <textarea class="form-control" rows="10" id="senderAbstract" name="senderAbstract"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-10 col-sm-offset-5">
+                                        <button id="submitBtn" type="submit" name="submit" value="submit">Υποβολή Περίληψης</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- END OF CONTAINER THAT HOLDS THE INTRODUCTION -->
+
+
+
+    <div class="footer">
+        <span>Συνδιοργανωτές</span>
+        <div class="content">
+            <div class="co-organizers">
+                <div class='photo-roll-container'>
+                    <div class='photo-roll'>
+                        <img id="uclan" src="logos/Uclan-Logo.jpg" alt="UCLan Cyprus" onclick="window.open('http://www.uclancyprus.ac.cy/en/')" title="Επισκέψου την Ιστοσελίδα">
+                        <img src="logos/CUT-logo.png" alt="Τεχνολογικό Πανεπιστήμιο Κύπρου" onclick="window.open('http://www.cut.ac.cy/?languageId=1')" title="Επισκέψου την Ιστοσελίδα">
+                        <img src="logos/University%20of%20Cyprus-Logo.png" alt="University of Cyprus" onclick="window.open('http://www.ucy.ac.cy/el/')" title="Επισκέψου την Ιστοσελίδα">
+                        <img src="logos/Open%20University%20of%20Cyprus-Logo.png" alt="Open University of Cyprus" onclick="window.open('http://www.ouc.ac.cy/')" title="Επισκέψου την Ιστοσελίδα">
+                        <img class="big" src="logos/Frederick%20University-Logo.png" alt="Frederick University" onclick="window.open('http://www.frederick.ac.cy/')" title="Επισκέψου την Ιστοσελίδα">
+                        <img id="eur" class="big" src="logos/European%20University%20of%20Cyprus-Logo.png" alt="European University of Cyprus" onclick="window.open('http://www.euc.ac.cy/')" title="Επισκέψου την Ιστοσελίδα">
+                        <img id="nic" src="logos/University%20of%20Nicosia-Logo.png" alt="University of Nicosia" onclick="window.open('https://www.unic.ac.cy/')" title="Επισκέψου την Ιστοσελίδα">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">Copyright © 2017, <a href="http://www.inspirecenter.org/">InSPIRE</a> - All rights reserved.</p>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/topNav.js"></script>
+    <script src="js/jquery.viewportchecker.js"></script>
+    <script src="js/animateAndSlider.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+            $("#sendAbstarctForm").validate({
+                rules: {
+                    senderName: "required",
+                    senderOrganization: "required",
+                    senderEmail: {
+                        required: true,
+                        email: true
+                    },
+                    senderPaperTitle: "required",
+                    senderAbstract: "required",
+
+                },
+                messages: {
+
+                    senderName: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    senderOrganization: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    senderEmail: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό",
+                        email: "Παρακαλώ εισάγετε ένα έγκυρο E-mail"
+                    },
+                    senderPaperTitle: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    senderAbstract: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+
+                },
+                errorElement: "em",
+                errorPlacement: function(error, element) {
+                    // Add the `help-block` class to the error element
+                    error.addClass("help-block");
+
+                    error.insertAfter(element);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).parents(".col-sm-7").addClass("has-error").removeClass("has-success");
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).parents(".col-sm-7").addClass("has-success").removeClass("has-error");
+                }
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>

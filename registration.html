@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ΣΤΑΤ2018 - Εγγραφή Συμμετεχόντων</title>
+
+    <!-- CSS & CUSTOM FONTS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/infinite-slider.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+    <!-- MOBILE TOP-NAV -->
+    <div class="mobile-nav">
+        <a id="mobile-logo" href="index.html"></a>
+        <div class="mobile-menu-container">
+            <span class="mobile-menu-icon"></span>
+        </div>
+    </div>
+    <!-- END OF MOBILE TOP-NAV -->
+
+    <!-- DESKTOP TOP-NAV -->
+    <nav class="top-nav">
+        <ul>
+            <a id="logo" href="index.html"></a>
+            <li><a href="index.html">Αρχική Σελίδα</a></li>
+            <li class="dropdown-btn">
+                <a href="#">Πληροφορίες<span class="caret"></span></a>
+                <ul class="dropdown">
+                    <li class="active-dropdown"><a href="registration.html">Εγγραφή Συμμετεχόντων</a></li>
+                    <li><a href="papers.html">Πρόσκληση Υποβολής Εργασιών</a></li>
+                    <li><a href="dates.html">Σημαντικές Ημερομηνίες</a></li>
+                    <li><a href="program.html">Πρόγραμμα</a></li>
+                    <li><a href="committee.html">Οργανωτική επιτροπή</a></li>
+                    <li><a href="venue.html">Χώρος Διεξαγωγής</a></li>
+                </ul>
+            </li>
+            <li><a href="sendAbstract.html">Υποβολή Περιλήψεων</a></li>
+            <li><a href="sponsors.html">Χορηγοί</a></li>
+        </ul>
+    </nav>
+    <!-- END OF DESKTOP TOP-NAV -->
+    <div class="pagination">
+        <div class="pagination-container">
+            <div class="holder"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Εγγραφή Συμμετεχόντων</div>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="container">
+
+            <p class="full-row">Για σκοπούς οργάνωσης της ημερίδας παρακαλούνται οι ενδιαφερόμενοι συμμετέχοντες που θα παρευρεθούν στην εκδήλωση να συμπληρώσυν την πιο κάτω ηλεκτρονική δήλωση. Η ηλεκτρονική δήλωση θα πρέπει να υποβληθεί το αργότερο μέχρι <b>01/04/2018</b>.<br> Το κόστος συμμετοχής στην ημερίδα ανέρχεται στα 20 ευρώ και το κόστος συμμετοχής στο δείπνο στα 30 ευρώ. Το συνολικό ποσό θα καταβληθεί κατά την εγγραφή των συμμετεχόντων την ημέρα της εκδήλωσης.
+            </p>
+
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div id="form-cont" class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">ΔΗΛΩΣΗ ΣΥΜΜΕΤΟΧΗΣ</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form id="signupForm" method="post" class="form-horizontal" action="html/registration_check.html">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="name">Ονοματεπώνυμο:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Ονοματεπώνυμο" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="title">Τίτλος:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="title" name="title" placeholder="Τίτλος" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="affiliation">Φορέας:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="affiliation" name="affiliation" placeholder="Φορέας" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="address">Διεύθυνση  επικοινωνίας:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="address" name="address" placeholder="Διεύθυνση  επικοινωνίας" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="postCode">Τ.Κ:</label>
+                                    <div class="col-sm-7">
+                                        <input type="number" class="form-control" id="postCode" name="postCode" placeholder="Τ.Κ" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="tel">Τηλ:</label>
+                                    <div class="col-sm-7">
+                                        <input type="number" class="form-control" id="tel" name="tel" placeholder="Τηλ" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="fax">Fax:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="fax" name="fax" placeholder="Fax" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="email">E-mail:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="email" name="email" placeholder="E-mail" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3">Συμμετοχή στο δείπνο:</label>
+
+                                    <label class="radio-inline"><input id="attendDinnerTrue" name="attendDinner" type="radio" value="1"/>Ναι</label>
+
+                                    <label id="pushLeft" class="radio-inline"><input id="attendDinnerFalse" name="attendDinner" type="radio" value="0" checked="checked"/>Όχι</label>
+
+                                    <span id="ermsg"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3">Παρουσίαση εργασίας:</label>
+
+                                    <label class="radio-inline"><input id="presentPaperTrue" name="presentPaper" type="radio" value="1"/>Ναι</label>
+
+                                    <label id="pushLeft" class="radio-inline"><input id="presentPaperFalse" name="presentPaper" type="radio" value="0" checked="checked"/>Όχι</label>
+
+                                </div>
+
+                                <div id="toggle-hide">
+                                    <p id="optional-text">Σε περίπτωση παρουσίασης εργασίας παρακαλώ συμπληρώστε τα πιο κάτω πεδία:</p>
+
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="paperTitle">ΤΙΤΛΟΣ ΕΡΓΑΣΙΑΣ:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="paperTitle" name="paperTitle" placeholder="ΤΙΤΛΟΣ ΕΡΓΑΣΙΑΣ" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="paperAuthors">Συγγραφέας(εις):</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="paperAuthors" name="paperAuthors" placeholder="Συγγραφέας(εις)" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="paperAreas">Θεματική Ενότητα:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="paperAreas" name="paperAreas" placeholder="Θεματική Ενότητα" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="paperPresenters">Ομιλητής/τρια:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="paperPresenters" name="paperPresenters" placeholder="Ομιλητής/τρια" />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-10 col-sm-offset-5">
+                                        <button id="submitBtn" type="submit" name="submit" value="submit">Υποβολή Δήλωσης</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- END OF CONTAINER THAT HOLDS THE INTRODUCTION -->
+
+
+
+
+
+
+
+
+
+
+    <div class="footer">
+        <span>Συνδιοργανωτές</span>
+        <div class="content">
+            <div class="co-organizers">
+                <div class='photo-roll-container'>
+                    <div class='photo-roll'>
+                        <img id="uclan" src="logos/Uclan-Logo.jpg" alt="UCLan Cyprus" onclick="window.open('http://www.uclancyprus.ac.cy/en/')" title="Επισκέψου την Ιστοσελίδα">
+                        <img src="logos/CUT-logo.png" alt="Τεχνολογικό Πανεπιστήμιο Κύπρου" onclick="window.open('http://www.cut.ac.cy/?languageId=1')" title="Επισκέψου την Ιστοσελίδα">
+                        <img src="logos/University%20of%20Cyprus-Logo.png" alt="University of Cyprus" onclick="window.open('http://www.ucy.ac.cy/el/')" title="Επισκέψου την Ιστοσελίδα">
+                        <img src="logos/Open%20University%20of%20Cyprus-Logo.png" alt="Open University of Cyprus" onclick="window.open('http://www.ouc.ac.cy/')" title="Επισκέψου την Ιστοσελίδα">
+                        <img class="big" src="logos/Frederick%20University-Logo.png" alt="Frederick University" onclick="window.open('http://www.frederick.ac.cy/')" title="Επισκέψου την Ιστοσελίδα">
+                        <img id="eur" class="big" src="logos/European%20University%20of%20Cyprus-Logo.png" alt="European University of Cyprus" onclick="window.open('http://www.euc.ac.cy/')" title="Επισκέψου την Ιστοσελίδα">
+                        <img id="nic" src="logos/University%20of%20Nicosia-Logo.png" alt="University of Nicosia" onclick="window.open('https://www.unic.ac.cy/')" title="Επισκέψου την Ιστοσελίδα">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">Copyright © 2017, <a href="http://www.inspirecenter.org/">InSPIRE</a> - All rights reserved.</p>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/topNav.js"></script>
+    <script src="js/jquery.viewportchecker.js"></script>
+    <script src="js/animateAndSlider.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('#presentPaperTrue').click(function() {
+                $('#toggle-hide').slideDown("slow");
+            });
+
+            $('#presentPaperFalse').click(function() {
+                $('#toggle-hide').slideUp("slow");
+                $('#paperTitle').val("");
+                $('#paperAreas').val("");
+                $('#paperAuthors').val("");
+                $('#paperPresenters').val("");
+
+            });
+
+
+            $("#signupForm").validate({
+                rules: {
+                    name: "required",
+                    title: "required",
+                    affiliation: "required",
+                    address: "required",
+                    postCode: "required",
+                    tel: "required",
+                    fax: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+
+
+                },
+                messages: {
+
+                    name: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    title: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    affiliation: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    address: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    postCode: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    tel: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    fax: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    email: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό",
+                        email: "Παρακαλώ εισάγετε ένα έγκυρο E-mail"
+                    },
+
+
+
+                },
+                errorElement: "em",
+                errorPlacement: function(error, element) {
+                    // Add the `help-block` class to the error element
+                    error.addClass("help-block");
+
+                    error.insertAfter(element);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).parents(".col-sm-7").addClass("has-error").removeClass("has-success");
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).parents(".col-sm-7").addClass("has-success").removeClass("has-error");
+                }
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
