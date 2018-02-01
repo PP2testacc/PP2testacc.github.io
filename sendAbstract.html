@@ -124,6 +124,9 @@
     </div>
     <div id="MathOutput-container">
         <div id="MathOutput-content">
+            <div id="title"></div>
+            <div id="name"></div>
+            <div id="organization"></div>
             <div id="MathOutput">
 
             </div>
@@ -216,10 +219,13 @@
                 }
             });
 
-            $("#preview-btn").click(function() {
+            $(document).on("click", "#preview-btn", function() {
+                $("#title").text($("#senderPaperTitle").val());
+                $("#name").text($("#senderName").val());
+                $("#organization").text($("#senderOrganization").val());
+
                 $("#MathOutput-container").fadeIn("slow");
                 $("body").addClass("noOverflow");
-
             });
 
             $("#close-modal").click(function() {
