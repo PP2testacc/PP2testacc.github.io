@@ -14,14 +14,17 @@
     <link href="css/animate.css" rel="stylesheet" />
     <link href="css/infinite-slider.css" rel="stylesheet" />
 
-
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] } });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
 </head>
 
 <body>
 
     <!-- MOBILE TOP-NAV -->
     <div class="mobile-nav">
-        <a id="mobile-logo" href="index.html"></a>
+        <a id="mobile-logo" href="index.php"></a>
         <div class="mobile-menu-container">
             <span class="mobile-menu-icon"></span>
         </div>
@@ -31,21 +34,21 @@
     <!-- DESKTOP TOP-NAV -->
     <nav class="top-nav">
         <ul>
-            <a id="logo" href="index.html"></a>
-            <li><a href="index.html">Αρχική Σελίδα</a></li>
+            <a id="logo" href="index.php"></a>
+            <li><a href="index.php">Αρχική Σελίδα</a></li>
             <li class="dropdown-btn">
                 <a href="#">Πληροφορίες<span class="caret"></span></a>
                 <ul class="dropdown">
-                    <li><a href="registration.html">Εγγραφή Συμμετεχόντων</a></li>
-                    <li><a href="papers.html">Πρόσκληση Υποβολής Εργασιών</a></li>
-                    <li><a href="dates.html">Σημαντικές Ημερομηνίες</a></li>
-                    <li><a href="program.html">Πρόγραμμα</a></li>
-                    <li><a href="committee.html">Οργανωτική επιτροπή</a></li>
-                    <li><a href="venue.html">Χώρος Διεξαγωγής</a></li>
+                    <li><a href="registration.php">Εγγραφή Συμμετεχόντων</a></li>
+                    <li><a href="papers.php">Πρόσκληση Υποβολής Εργασιών</a></li>
+                    <li><a href="dates.php">Σημαντικές Ημερομηνίες</a></li>
+                    <li><a href="program.php">Πρόγραμμα</a></li>
+                    <li><a href="committee.php">Οργανωτική επιτροπή</a></li>
+                    <li><a href="venue.php">Χώρος Διεξαγωγής</a></li>
                 </ul>
             </li>
-            <li class="active-link"><a href="sendAbstract.html">Υποβολή Περιλήψεων</a></li>
-            <li><a href="sponsors.html">Χορηγοί</a></li>
+            <li class="active-link"><a href="sendAbstract.php">Υποβολή Περιλήψεων</a></li>
+            <li><a href="sponsors.php">Χορηγοί</a></li>
         </ul>
     </nav>
     <!-- END OF DESKTOP TOP-NAV -->
@@ -66,7 +69,7 @@
                             <h3 class="panel-title">ΥΠΟΒΟΛΗ ΠΕΡΙΛΗΨΕΩΝ</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="sendAbstarctForm" method="post" class="form-horizontal" action="html/sendAbstract_check.html">
+                            <form id="sendAbstarctForm" method="post" class="form-horizontal" action="php/sendAbstract_check.php">
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label" for="senderName">Όνομα Αποστολέα:</label>
                                     <div class="col-sm-7">
@@ -98,8 +101,12 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label" for="senderAbstract">Περίληψη:</label>
                                     <div class="col-sm-7">
-                                        <textarea class="form-control" rows="10" id="senderAbstract" name="senderAbstract"></textarea>
+
+                                        <a id="preview-btn" href="javascript:void(0)">Προεπισκόπηση</a>
+                                        <textarea onkeyup="UpdateMath(this.value)" class="form-control" rows="10" id="senderAbstract" name="senderAbstract" placeholder="Μπορείτε να αντιγράψετε την περίληψη σας απο έγγραφο LaTeX, PDF ή Word και να το επικολλήσετε σε αυτό το πεδίο"></textarea>
                                     </div>
+
+
                                 </div>
 
                                 <div class="form-group">
@@ -115,7 +122,17 @@
             </div>
         </div>
     </div>
+    <div id="MathOutput-container">
+        <div id="MathOutput-content">
+            <div id="MathOutput">
 
+            </div>
+
+        </div>
+        <div id="MathOutput-footer">
+            <span id="close-modal">Κλείσε</span>
+        </div>
+    </div>
 
 
     <!-- END OF CONTAINER THAT HOLDS THE INTRODUCTION -->
@@ -150,7 +167,6 @@
     <script src="js/jquery.validate.min.js"></script>
 
     <script type="text/javascript">
-
         $(document).ready(function() {
 
             $("#sendAbstarctForm").validate({
@@ -200,7 +216,37 @@
                 }
             });
 
+            $("#preview-btn").click(function() {
+                $("#MathOutput-container").fadeIn("slow");
+                $("body").addClass("noOverflow");
+
+            });
+
+            $("#close-modal").click(function() {
+                $("#MathOutput-container").fadeOut("slow");
+                $("body").removeClass("noOverflow");
+
+            });
+
         });
+
+    </script>
+
+    <script>
+        (function() {
+
+            //
+            //  The onchange event handler that typesets the
+            //  math entered by the user
+            //
+            window.UpdateMath = function(TeX) {
+                //set the MathOutput HTML
+                document.getElementById("MathOutput").innerHTML = TeX;
+                //reprocess the MathOutput Element
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "MathOutput"]);
+
+            }
+        })();
 
     </script>
 </body>
