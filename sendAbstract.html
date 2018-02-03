@@ -17,7 +17,7 @@
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] } });
     </script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
 </head>
 
 <body>
@@ -70,25 +70,139 @@
                         </div>
                         <div class="panel-body">
                             <form id="sendAbstarctForm" method="post" class="form-horizontal" action="php/sendAbstract_check.php">
+
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="senderName">Όνομα Αποστολέα:</label>
+                                    <label class="col-sm-3 control-label" for="numOfAuthors">Αριθμός Συγγραφέων</label>
                                     <div class="col-sm-7">
-                                        <input type="text" class="form-control" id="senderName" name="senderName" placeholder="Όνομα Αποστολέα" />
+                                        <select class="form-control" id="numOfAuthors">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="senderOrganization">Οργανισμός:</label>
+                                    <label class="col-sm-3 control-label" for="author1Name">Όνομα Συγγραφέα 1:</label>
                                     <div class="col-sm-7">
-                                        <input type="text" class="form-control" id="senderOrganization" name="senderOrganization" placeholder="Οργανισμός" />
+                                        <input type="text" class="form-control" id="author1Name" name="author1Name" placeholder="Όνομα Συγγραφέα" />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="senderEmail">Email Αποστολέα:</label>
+                                    <label class="col-sm-3 control-label" for="author1organization">Οργανισμός Συγγραφέα 1:</label>
                                     <div class="col-sm-7">
-                                        <input type="text" class="form-control" id="senderEmail" name="senderEmail" placeholder="Email Αποστολέα" />
+                                        <input type="text" class="form-control" id="author1organization" name="author1organization" placeholder="Οργανισμός" />
                                     </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="author1Email">Email Συγγραφέα 1:</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="author1Email" name="author1Email" placeholder="Email Συγγραφέα" />
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div id="toggle-hide-2">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="author2Name">Όνομα Συγγραφέα 2:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="author2Name" name="author2Name" placeholder="Όνομα Συγγραφέα" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="author2organization">Οργανισμός Συγγραφέα 2:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="author2organization" name="author2organization" placeholder="Οργανισμός" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="author2Email">Email Συγγραφέα 2:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="author2Email" name="author2Email" placeholder="Email Συγγραφέα" />
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+
+                                <div id="toggle-hide-3">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="author3Name">Όνομα Συγγραφέα 3:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="author3Name" name="author3Name" placeholder="Όνομα Συγγραφέα" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="author3organization">Οργανισμός Συγγραφέα 3:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="author3organization" name="author3organization" placeholder="Οργανισμός" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="author3Email">Email Συγγραφέα 3:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="author3Email" name="author3Email" placeholder="Email Συγγραφέα" />
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+
+
+                                <div id="toggle-hide-4">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="author4Name">Όνομα Συγγραφέα 4:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="author4Name" name="author4Name" placeholder="Όνομα Συγγραφέα" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="author4organization">Οργανισμός Συγγραφέα 4:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="author4organization" name="author4organization" placeholder="Οργανισμός" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="author4Email">Email Συγγραφέα 4:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="author4Email" name="author4Email" placeholder="Email Συγγραφέα" />
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+
+
+                                <div id="toggle-hide-5">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="author5Name">Όνομα Συγγραφέα 5:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="author5Name" name="author5Name" placeholder="Όνομα Συγγραφέα" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="author5organization">Οργανισμός Συγγραφέα 5:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="author5organization" name="author5organization" placeholder="Οργανισμός" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="author5Email">Email Συγγραφέα 5:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="author5Email" name="author5Email" placeholder="Email Συγγραφέα" />
+                                        </div>
+                                    </div>
+                                    <br>
                                 </div>
 
                                 <div class="form-group">
@@ -172,27 +286,132 @@
     <script type="text/javascript">
         $(document).ready(function() {
 
+            var active2Author = false;
+            var active3Author = false;
+            var active4Author = false;
+            var active5Author = false;
+
+
+            $('select').on('change', function() {
+                if ((this.value) == '1') {
+                    $('#toggle-hide-2').slideUp("slow");
+                    $('#toggle-hide-3').slideUp("slow");
+                    $('#toggle-hide-4').slideUp("slow");
+                    $('#toggle-hide-5').slideUp("slow");
+
+                } else if ((this.value) == '2') {
+                    $('#toggle-hide-2').slideDown("slow");
+                    $('#toggle-hide-3').slideUp("slow");
+                    $('#toggle-hide-4').slideUp("slow");
+                    $('#toggle-hide-5').slideUp("slow");
+
+                } else if ((this.value) == '3') {
+                    $('#toggle-hide-2').slideDown("slow");
+                    $('#toggle-hide-3').slideDown("slow");
+                    $('#toggle-hide-4').slideUp("slow");
+                    $('#toggle-hide-5').slideUp("slow");
+
+                } else if ((this.value) == '4') {
+                    $('#toggle-hide-2').slideDown("slow");
+                    $('#toggle-hide-3').slideDown("slow");
+                    $('#toggle-hide-4').slideDown("slow");
+                    $('#toggle-hide-5').slideUp("slow");
+
+                } else {
+                    $('#toggle-hide-2').slideDown("slow");
+                    $('#toggle-hide-3').slideDown("slow");
+                    $('#toggle-hide-4').slideDown("slow");
+                    $('#toggle-hide-5').slideDown("slow");
+                }
+            });
+
+
             $("#sendAbstarctForm").validate({
                 rules: {
-                    senderName: "required",
-                    senderOrganization: "required",
-                    senderEmail: {
+                    author1Name: "required",
+                    author2Name: "required",
+                    author3Name: "required",
+                    author4Name: "required",
+                    author5Name: "required",
+                    author1organization: "required",
+                    author2organization: "required",
+                    author3organization: "required",
+                    author4organization: "required",
+                    author5organization: "required",
+                    author1Email: {
+                        required: true,
+                        email: true
+                    },
+                    author2Email: {
+                        required: true,
+                        email: true
+                    },
+                    author3Email: {
+                        required: true,
+                        email: true
+                    },
+                    author4Email: {
+                        required: true,
+                        email: true
+                    },
+                    author5Email: {
                         required: true,
                         email: true
                     },
                     senderPaperTitle: "required",
                     senderAbstract: "required",
 
+
                 },
                 messages: {
 
-                    senderName: {
+                    author1Name: {
                         required: "Αυτό το πεδίο είναι υποχρεωτικό"
                     },
-                    senderOrganization: {
+                    author2Name: {
                         required: "Αυτό το πεδίο είναι υποχρεωτικό"
                     },
-                    senderEmail: {
+                    author3Name: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    author4Name: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    author5Name: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    author1organization: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    author2organization: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    author3organization: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    author4organization: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    author5organization: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό"
+                    },
+                    author1Email: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό",
+                        email: "Παρακαλώ εισάγετε ένα έγκυρο E-mail"
+                    },
+                    author2Email: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό",
+                        email: "Παρακαλώ εισάγετε ένα έγκυρο E-mail"
+                    },
+                    author3Email: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό",
+                        email: "Παρακαλώ εισάγετε ένα έγκυρο E-mail"
+                    },
+                    author4Email: {
+                        required: "Αυτό το πεδίο είναι υποχρεωτικό",
+                        email: "Παρακαλώ εισάγετε ένα έγκυρο E-mail"
+                    },
+                    author5Email: {
                         required: "Αυτό το πεδίο είναι υποχρεωτικό",
                         email: "Παρακαλώ εισάγετε ένα έγκυρο E-mail"
                     },
@@ -219,6 +438,8 @@
                 }
             });
 
+
+
             $(document).on("click", "#preview-btn", function() {
                 $("#title").text($("#senderPaperTitle").val());
                 $("#name").text($("#senderName").val());
@@ -238,17 +459,19 @@
 
     </script>
 
+
+
+
+
+
     <script>
         (function() {
 
-            //
-            //  The onchange event handler that typesets the
-            //  math entered by the user
-            //
+
             window.UpdateMath = function(TeX) {
-                //set the MathOutput HTML
+
                 document.getElementById("MathOutput").innerHTML = TeX;
-                //reprocess the MathOutput Element
+
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "MathOutput"]);
 
             }

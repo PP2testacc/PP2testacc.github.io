@@ -1,3 +1,11 @@
+#toggle-hide-2, #toggle-hide-3,#toggle-hide-4,#toggle-hide-5{
+    display: none;
+}
+
+body.noOverflow {
+    overflow: hidden;
+}
+
 #preview-btn {
     position: absolute;
     left: -120px;
