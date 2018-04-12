@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zARi</title>
+
+    <!-- CSS & CUSTOM FONTS -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <img class="logo" src="images/logo.png" alt="">
+        <h1>zARi</h1>
+        <a class="play btn" href="players_selection.php">PLAY NOW</a>
+        <input type="file" accept="image/*;capture=camera">
+        <input type="file" accept="audio/*;capture=microphone">
+
+
+        <div class="icons-container">
+            <span id="microphone"><i class="fas fa-microphone icon"></i></span>
+            <span><i class="fas fa-camera icon"></i></span>
+            <span id="speaker"><i class="fas fa-volume-up icon"></i></span>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#speaker").click(function() {
+                responsiveVoice.speak("You can click the play now button to go to the players selection screen", "UK English Female", {
+                    rate: 0.9
+                });
+            });
+
+            $("#microphone").click(function() {
+
+                responsiveVoice.speak("The only available command is. Play.", "UK English Female", {
+                    rate: 0.9
+                });
+
+                var recognition = new(window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+                recognition.lang = 'en-US';
+                recognition.interimResults = false;
+                recognition.maxAlternatives = 5;
+                recognition.start();
+
+                recognition.onresult = function(event) {
+                    var word = event.results[0][0].transcript;
+
+                    if (word === "play") {
+                        $(location).attr("href", "players_selection.php");
+                    } else {
+                        responsiveVoice.speak("Unknown commands, please try again!", "UK English Female", {
+                            rate: 0.9
+                        });
+                    }
+                };
+
+            });
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
