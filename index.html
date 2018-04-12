@@ -16,13 +16,17 @@
 <body>
 
     <div class="container">
-        <img class="logo small" src="images/logo.png" alt="">
-        <h1 class="small">zARi</h1>
-        <a class="one btn" href="enter_name_single.php">SINGLE PLAYER</a>
-        <a class="two btn" href="#">TWO PLAYERS</a>
+        <img class="logo" src="images/logo.png" alt="">
+        <h1>zARi</h1>
+        <a class="play btn" href="players_selection.html">PLAY NOW</a>
+        <input type="file" accept="image/*;capture=camera">
+        <input type="file" accept="audio/*;capture=microphone">
+
+
         <div class="icons-container">
-            <span id="microphone"><i class="fas fa-microphone"></i></span>
-            <span id="speaker"><i class="fas fa-volume-up"></i></span>
+            <span id="microphone"><i class="fas fa-microphone icon"></i></span>
+            <span><i class="fas fa-camera icon"></i></span>
+            <span id="speaker"><i class="fas fa-volume-up icon"></i></span>
         </div>
     </div>
 
@@ -42,15 +46,14 @@
         $(document).ready(function() {
 
             $("#speaker").click(function() {
-                responsiveVoice.speak("You can click the single player button to play alone. Or click the two players button to play with a friend.", "UK English Female", {
-                    rate: 0.8
+                responsiveVoice.speak("You can click the play now button to go to the players selection screen", "UK English Female", {
+                    rate: 0.9
                 });
             });
 
-
             $("#microphone").click(function() {
 
-                responsiveVoice.speak("There are two available commands. Single Player. to play alone.or. Two players. to play with a friend.", "UK English Female", {
+                responsiveVoice.speak("The only available command is. Play.", "UK English Female", {
                     rate: 0.9
                 });
 
@@ -58,24 +61,22 @@
                 recognition.lang = 'en-US';
                 recognition.interimResults = false;
                 recognition.maxAlternatives = 5;
-
-                setTimeout(function() {
-                    recognition.start();
-                }, 8000);
+                recognition.start();
 
                 recognition.onresult = function(event) {
                     var word = event.results[0][0].transcript;
 
-                    if (word === "single player") {
-                        $(location).attr("href", "enter_name_single.php");
-
+                    if (word === "play") {
+                        $(location).attr("href", "players_selection.html");
                     } else {
                         responsiveVoice.speak("Unknown commands, please try again!", "UK English Female", {
                             rate: 0.9
                         });
                     }
                 };
+
             });
+
 
 
         });
