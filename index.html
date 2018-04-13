@@ -61,13 +61,15 @@
                 recognition.lang = 'en-US';
                 recognition.interimResults = false;
                 recognition.maxAlternatives = 5;
-                recognition.start();
+                setTimeout(function() {
+                    recognition.start();
+                }, 4000);
 
                 recognition.onresult = function(event) {
                     var word = event.results[0][0].transcript;
 
                     if (word === "play") {
-                        $(location).attr("href", "players_selection.html");
+                        $(location).attr("href", "playersSelection.html");
                     } else {
                         responsiveVoice.speak("Unknown commands, please try again!", "UK English Female", {
                             rate: 0.9
