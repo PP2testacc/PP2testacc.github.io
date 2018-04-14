@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zARi</title>
+
+    <!-- CSS & CUSTOM FONTS -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <img class="logo x-small" src="images/logo.png" alt="">
+        <div id="block-big">GUESS THE NUMBER</div>
+        <div id="block-medium"></div>
+        <div class="flex">
+            <div class="num-one dices">1</div>
+            <div class="num-two dices">2</div>
+            <div class="num-three dices">3</div>
+            <div class="num-four dices">4</div>
+            <div class="num-five dices">5</div>
+            <div class="num-six dices">6</div>
+        </div>
+        <div class="icons-container">
+            <span><i class="fas fa-microphone"></i></span>
+            <span id="speaker"><i class="fas fa-volume-up"></i></span>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            document.getElementById("block-medium").innerHTML = localStorage.getItem("firstPlayerName");
+
+
+            $("#speaker").click(function() {
+                responsiveVoice.speak("Click one of the dices to guess the next shuffled number ", "UK English Female", {
+                    rate: 0.9
+                });
+
+            });
+
+
+            $(".flex").find(".dices").click(function() {
+                var firstPlayerNumber = $(this).text();
+
+                localStorage.setItem("firstPlayerNumber", firstPlayerNumber);
+
+                $(location).attr("href", "guess_number_two_players_two.html");
+            });
+
+
+
+
+
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

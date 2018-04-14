@@ -18,8 +18,8 @@
     <div class="container">
         <img class="logo small" src="images/logo.png" alt="">
         <h1 class="small">zARi</h1>
-        <a class="one btn" href="enterNamSingle.html">SINGLE PLAYER</a>
-        <a class="two btn" href="#">TWO PLAYERS</a>
+        <a class="one btn" href="enter_name_single.html">SINGLE PLAYER</a>
+        <a class="two btn" href="enter_name_two_players_one.html">TWO PLAYERS</a>
         <div class="icons-container">
             <span id="microphone"><i class="fas fa-microphone"></i></span>
             <span id="speaker"><i class="fas fa-volume-up"></i></span>
@@ -67,7 +67,7 @@
                     var word = event.results[0][0].transcript;
 
                     if (word === "single player") {
-                        $(location).attr("href", "enterNamSingle.html");
+                        $(location).attr("href", "enter_name_single.html");
 
                     } else {
                         responsiveVoice.speak("Unknown commands, please try again!", "UK English Female", {

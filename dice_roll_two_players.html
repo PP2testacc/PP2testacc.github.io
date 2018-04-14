@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zARi</title>
+
+    <!-- CSS & CUSTOM FONTS -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="flex-row">
+            <div id="fp" class="first-player-name"></div>
+            <div id=sco class="score">
+                <span id="fps"></span>
+                <span>:</span>
+                <span id="sps"></span>
+            </div>
+            <div id="sp" class="second-player-name"></div>
+        </div>
+        <div class="flex-row-small">
+            <div id="fpn" class="first-player-number">Number: </div>
+            <img id="very-small-logo" src="images/logo.png" alt="">
+            <div id="spn" class="second-player-number">Number: </div>
+        </div>
+
+        <div id="interativo"></div>
+        <button class="btn roll" id="play">Roll</button>
+
+        <div class="icons-container">
+            <span id="microphone"><i class="fas fa-microphone icon"></i></span>
+            <span><i class="fas fa-redo-alt icon"></i></span>
+            <span id="speaker"><i class="fas fa-volume-up icon"></i></span>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+
+            if (localStorage.getItem("firstPlayerScore") === null) {
+                localStorage.setItem("firstPlayerScore", 0);
+            }
+
+            if (localStorage.getItem("secondPlayerScore") === null) {
+                localStorage.setItem("secondPlayerScore", 0);
+            }
+
+            document.getElementById("fp").innerHTML = localStorage.getItem("firstPlayerName");
+            document.getElementById("fps").innerHTML = localStorage.getItem("firstPlayerScore");
+
+
+            document.getElementById("sp").innerHTML = localStorage.getItem("secondPlayerName");
+            document.getElementById("sps").innerHTML = localStorage.getItem("secondPlayerScore");
+
+
+
+            var firstPlayerNumber = localStorage.getItem("firstPlayerNumber");
+            var firstPlayerScore = parseFloat(localStorage.getItem("firstPlayerScore"));
+
+            var secondPlayerNumber = localStorage.getItem("secondPlayerNumber");
+            var secondPlayerScore = parseFloat(localStorage.getItem("secondPlayerScore"));
+
+
+            $('#fpn').append(document.createTextNode(firstPlayerNumber));
+            $('#spn').append(document.createTextNode(secondPlayerNumber));
+
+
+
+
+            var debug = false;
+            var element = document.getElementById("interativo");
+
+            var dice = {
+                position0: {
+                    y: 0,
+                    rotateX: 0,
+                    rotateY: 0
+                },
+                position1: {
+                    y: 600,
+                    rotateX: -900,
+                    rotateY: -180
+                },
+                position2: {
+                    y: 600,
+                    rotateX: -1080,
+                    rotateY: -180
+                },
+                position3: {
+                    y: 600,
+                    rotateX: -1080,
+                    rotateY: -90
+                },
+                position4: {
+                    y: 600,
+                    rotateX: -990,
+                    rotateY: -270
+                },
+                position5: {
+                    y: 600,
+                    rotateX: -810,
+                    rotateY: -90
+                },
+                position6: {
+                    y: 600,
+                    rotateX: -1080,
+                    rotateY: -270
+                },
+
+
+                roll: function(callback) {
+                    var number = Math.floor((Math.random() * 6) + 1);
+                    if (debug && callback) {
+                        callback(prompt('Valor do dado') * 1);
+                        //return;
+                    }
+
+                    //Verifica se o dado existe
+                    if (!dice.element) {
+                        //Adiciona dado ao tabuleiro
+                        dice.element = document.createElement('div');
+                        dice.element.id = 'dice';
+                        dice.element.innerHTML = '' +
+                            '<div class="face front"></div>' +
+                            '<div class="face back"></div>' +
+                            '<div class="face left"></div>' +
+                            '<div class="face bottom"></div>' +
+                            '<div class="face top"></div>' +
+                            '<div class="face right"></div>';
+                        element.appendChild(dice.element);
+                    }
+                    dice.reset();
+
+                    $(dice.element).transition(dice['position' + number], 2300, 'ease-out', function() {
+                        if (callback)
+                            callback(number);
+                    });
+                },
+                reset: function() {
+                    $(dice.element).transition(dice.position0, 0);
+                }
+            };
+
+
+            document.getElementById("play").addEventListener('click', function(e) {
+                e.preventDefault();
+                dice.roll(function(number) {
+                    document.getElementById("play").innerHTML = "Roll: " + number;
+
+                    var p1Dif;
+                    var p2Dif;
+                    var found = false;
+
+                    if (number == firstPlayerNumber) {
+                        found = true;
+                        firstPlayerScore = firstPlayerScore + 2;
+                        localStorage.setItem("firstPlayerScore", firstPlayerScore.toString());
+                        document.getElementById("fps").innerHTML = localStorage.getItem("firstPlayerScore");
+
+
+                    } else if (number == secondPlayerNumber) {
+                        found = true;
+                        secondPlayerScore = secondPlayerScore + 2;
+                        localStorage.setItem("secondPlayerScore", secondPlayerScore.toString());
+                        document.getElementById("sps").innerHTML = localStorage.getItem("secondPlayerScore");
+                    }
+
+
+                    if (!found) {
+                        if (number > firstPlayerNumber) {
+                            p1Dif = number - firstPlayerNumber;
+                        } else {
+                            p1Dif = firstPlayerNumber - number;
+                        }
+
+                        if (number > secondPlayerNumber) {
+                            p2Dif = number - secondPlayerNumber;
+                        } else {
+                            p2Dif = secondPlayerNumber - number;
+                        }
+
+                        if (p1Dif > p2Dif) {
+
+                        } else if (p1Dif < p2Dif) {
+
+                        } else {
+
+                        }
+                    }
+
+
+
+
+
+
+
+
+                });
+            });
+
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>
